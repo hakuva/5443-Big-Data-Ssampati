@@ -19,4 +19,4 @@ Then the output must be sent to a file with an extension of .json
 
 
 
-Among the given file .csv file compresses at the best with gzip compression.
+Among the given file .yml file compresses at the best with gzip compression.
