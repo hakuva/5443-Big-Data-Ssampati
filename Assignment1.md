@@ -16,3 +16,7 @@ command "mysql_fetch_object($variable_name)" to fetch the attributes of the tabl
 This must be done in a loop and the result that fetch command gets must be sent to encode in JSON using the command "json_encode($result)"
 
 Then the output must be sent to a file with an extension of .json
+
+
+
+Among the given file .csv file compresses at the best with gzip compression.
