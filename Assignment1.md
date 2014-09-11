@@ -1,4 +1,4 @@
-###Program 1- Assignment 1###
+Program 1- Assignment 1
 ========================
 
 
@@ -19,8 +19,4 @@ Then the output must be sent to a file with an extension of .json
 
 
 
-<<<<<<< HEAD
 Among the given file .XML file compresses at the best with gzip compression.
-=======
-Among the given file .yml file compresses at the best with gzip compression.
->>>>>>> FETCH_HEAD
