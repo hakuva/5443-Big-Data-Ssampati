@@ -1,11 +1,28 @@
-This also applies to the case where a machine has crashed and rebooted, etc, and you need to get it to rejoin the cluster. You do not need to shutdown and/or restart the entire cluster in this case.
+-----
+screenshot for jps command:
+-----
 
-First, add the new node's DNS name to the conf/slaves file on the master node.
-
-Then log in to the new slave node and execute:
+![alt tag](http://104.131.135.146/BigData/jps.png)
 
 
-$ cd path/to/hadoop
-$ bin/hadoop-daemon.sh start datanode
-$ bin/hadoop-daemon.sh start tasktracker
-If you are using the dfs.include/mapred.include functionality, you will need to additionally add the node to the dfs.include/mapred.include file, then issue hadoop dfsadmin -refreshNodes and hadoop mradmin -refreshNodes so that the NameNode and JobTracker know of the additional node that has been added.
+-----
+1. Adding nodes to the Hadoop cluster
+-----
+
+Thought of writing pages and pages of description on adding cluster but thought if something is present online why doing it again.
+
+so here is the link to how to add the nodes:
+
+http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
+
+
+-----
+2. Multi-node Hadoop cluster
+-----
+
+Yes we can simultaneously run a hadoop cluster and be a slave to another hadoop cluster.
+
+The tutorial for making multi-node hadoop cluster is:
+
+http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-multi-node-cluster/
+
