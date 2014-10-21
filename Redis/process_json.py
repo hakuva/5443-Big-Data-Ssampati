@@ -23,11 +23,11 @@ for line in file1:
         if is_json(line):
             count1=count1+1
             line = json.loads(filter(lambda x: x in string.printable, line))
-            out = json.dumps(line, sort_keys=True,indent=4, separators=(',', ': '))
+            out = json.dumps(line)
             file2.write(out)
         else:
             count2=count2+1
-count3=(count2/count1)*100
+count3 = float((count2/count1)*100)
 writeup.write('### Json File Processing')
 writeup.write('\n### Written by Sai Sharan Sampati')
 writeup.write('\n- Total Lines Processed: ' +str(count1))
