@@ -12,17 +12,27 @@ f = open('../Nutrition_Clean.json','r')
 
 r.flushall()
 
+list = []
+
 for line in f:
     # Filter that line, removing non ascii characters
     # Doesn't identify which, just filters
 		line = json.loads(filter(lambda x: x in string.printable, line))
 		
 		for nut in line['nutrients']:
-			r.zincrby('taghash',nut['description'],1)
+			r.zincrby('hashtag',nut['description'],1)
         	
-LenZList=r.zcard('taghash')
-listVals=r.zrange('taghash',LenZList-5,LenZList)
+length=r.zcard('hashtag')
+val=r.zrange('hashtag',length-5,length)
 
-for test in listVals:
-	print test
-	print r.zscore('taghash',test)
+for nut_tag in val:
+	list.append(nut_tag)
+
+print "### Top 5 most commonly occuring nutrients:"
+
+i = 4
+j = 1	
+while i >= 0 :
+	print j, '. ', list[i], ' occurs ', r.zscore('hashtag',list[i]), 'number of times'
+	j += 1
+	i -= 1

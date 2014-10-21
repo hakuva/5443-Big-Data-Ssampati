@@ -3,47 +3,31 @@ import sys
 import json
 import string
 
-f= open('nutrition.json', 'r')
+f= open('../Nutrition_Clean.json', 'r')
 
-count = 0
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-Checking = []
-Check = []
-Counter = []
+r.flushall()
 
 for line in f:
-	line = json.loads(filter(lambda x: x in string.printable, line))
-	
-	l = json.dumps(line)
-	
-	if (len(Check) == 0):
-		Check.append(line['description'])
-		
-	else:
-		j = 0
-		for j in range((len(Check))-1):
-			if (Check[j] == line['description']):
-				k = 1
-		if k == 0:
-			Check.append(line['description'])
-	
-	for nut in line['nutrients']:
-		k=0
-		if (len(Checking) == 0):
-			Checking.append(nut['description'])
-			Counter.append(1)
-		
-		else:
-			j = 0
-			for j in range((len(Checking))-1):
-				if (Checking[j] == nut['description']):
-					Counter[j] = Counter[j] + 1
-					k = 1
-					
-			if k == 0:
-				Checking.append(nut['description'])
-				Counter.append(1)
 
-ind = Counter.index(max(Counter))
-per = ((len(Check))/(max(Counter))) * 100
-print Checking[ind], " occurs in ", per, "% number of food items."
+    # Filter that line, removing non ascii characters
+    # Doesn't identify which, just filters
+		line = json.loads(filter(lambda x: x in string.printable, line))
+		
+	
+		r.sadd('food_items',{line['description']})
+	
+		for nut in line['nutrients']:
+				r.zincrby('hashtag',nut['description'],1)
+
+
+item = 'Protein'	
+num_items = r.scard('food_items')
+item_rep = r.zscore('hashtag',item)
+print "### Percentage of food items contain ",item," nutrient:"
+print "> Unique Items:", num_items
+print "> ",item, ' occurs ',item_rep,' times'
+
+per = (float(item_rep)/float(item_rep))*100
+print "> ",item, " occurs in " , per , "% number of food items."

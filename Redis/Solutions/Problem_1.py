@@ -17,4 +17,6 @@ for line in f:
 	
 	r.sadd('food_items',{line['description']})
 	
+	
+print "### Unique food items in the given file:"
 print "Unique Items:", r.scard('food_items')

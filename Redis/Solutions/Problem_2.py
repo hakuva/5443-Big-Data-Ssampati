@@ -17,5 +17,7 @@ for line in f:
 	for nut in line['nutrients']:
 		
 		r.sadd('nutrient',{nut['description']})
+
+print "### Unique nutrients in the given file:"
 	
 print "Unique Nutrients:", r.scard('nutrient')
