@@ -5,11 +5,11 @@ ___MapReduce and its Extensions___
 
 ---
 <li>
-<ol> Introduction </ol>
-<ol> Pilot-MapReduce </ol>
-<ol> MapReduce on Clusters </ol>
-<ol> MARIANE </ol>
-<ol> MARLA </ol>
-<ol> Conclusion </ol>
-<ol> Bibliography </ol>
+<ol> 1. Introduction </ol>
+<ol> 2.Pilot-MapReduce </ol>
+<ol> 3. MapReduce on Clusters </ol>
+<ol> 4. MARIANE </ol>
+<ol> 5. MARLA </ol>
+<ol> 6. Conclusion </ol>
+<ol> 7. Bibliography </ol>
 </li>
