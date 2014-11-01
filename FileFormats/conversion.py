@@ -6,7 +6,8 @@ inputfile = open('GpsFilePoints.csv', 'r')
 outputfile = open('GpsFilePoints.json', 'w')
 
 # Fields present in the CSV file. 
-fields = ("UserID","FieldID","PointID","Lat","Lng","Ele","Time","Course","Hdop"$
+fields = ("UserID","FieldID","PointID","Lat","Lng","Ele","Time","Course","Hdop","Sat","Filtered")
+
 
 # Read all the lines present in CSV file.
 lines = csv.reader(inputfile, fields)
