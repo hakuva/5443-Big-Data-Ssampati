@@ -3,21 +3,26 @@ Program 1- Assignment 1
 
 ## Conversion:
 
-I choose to use the SQL file to convert to JSON file.
+I choose to use the CSV file to convert to JSON file.
 
-In order to convert it into an JSON i choose to use PHP scripting.
+In order to convert it into an JSON i choose to use Python language.
 
-PHP is a server side scripting language which works well with the SQL databases like MySql.
-Mysql is a open source database.
+python have packages to import the CSV and JSON
 
-create a variable and assign the whole table values to the variable by using command `"select * from table_name"`
+then load the input file and then specify the fields that in the CSV file.
 
-After selecting everything from the Sql file we must use the command `"mysql_fetch_object($variable_name)"` to fetch the attributes of the table.
-
-This must be done in a loop and the result that fetch command gets must be sent to encode in JSON using the command `"json_encode($result)"`
+now dump the file into JSON
 
 Then the output must be sent to a file with an extension of .json
 
+
+The file process is too large for the digital ocean server so it was repeatedly killing the process.
+
+so i had to run it on CS2 server and create the JSON file.
+
+You can find GpsFilePoints.json in cs2.mwsu.edu/~ssampati/GpsFilePoints.json
+
+Created JSON file is 531 MB in size
 
 ## Compression:
 
