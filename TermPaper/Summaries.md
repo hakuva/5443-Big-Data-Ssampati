@@ -10,7 +10,7 @@ The architecture approaches given are: Local MapReduce (LMR), Global MapReduce (
 [2]	Fadika. Z., Dede. E., Ramakrishnan. L., and Govindaraju. M., MARIANE: MApReduce Implementation Adapted for HPC Environments, 12th IEEE/ACM International conference on Grid Computing, Washington, DC, USA, 2011, Pg: 82-89.
 ---
 ___Summary:___
-	The authors of this paper 
+	The authors of this paper introduced MARIANE (MApReduce Implementation Adapted for HPC Environments), an implementation designed for clustered and shared-disk file systems and as such not dedicated to a specific MapReduce Solution. MARIANE is an extension of MapReduce, so it uses most of the MapReduce functionalities.They have performed experiments of the model on the Magellan testbed at the National Energy Research Scientific Computing Center (NERSC) over Apache Hadoop. From their experiments MARIANE found that they have high performance under working and failing conditions than a regular MapReduce.
 
 ---
 [3]	Fadika. Z., Dede. E., Hartog. J., and Govindaraju. M., MARLA: MapReduce for heterogeneous clusters, 12th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing,  2012, Pg: 49-56.
